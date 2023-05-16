@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 16:01:39 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/16 18:20:03 by tsishika         ###   ########.fr       */
+/*   Created: 2023/05/16 17:19:50 by tsishika          #+#    #+#             */
+/*   Updated: 2023/05/16 18:01:40 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,29 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-size_t	strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strcpy(char *dest, char *src)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
 
 	i = 0;
-	j = ft_strlen(src);
-	if (dstsize != 0)
+	while (src[i] != '\0')
 	{
-		while (src[i] != '\0' && i < dstsize - 1)
-		{
-			dst[i] == src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		dest[i] == src[i];
+		i++;
 	}
-	return (j);
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	strdup(const char *s1)
+{
+	int		i;
+	char	*dest;
+
+	i = ft_strlen(s1);
+	dest = malloc(sizeof(char) * i);
+	if (dest == NULL)
+		return (0);
+	else
+		return (ft_strcpy(dest, s1));
 }
