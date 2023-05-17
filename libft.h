@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:02:06 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/17 15:41:17 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/18 00:03:40 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,24 @@ int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-// memchr
-// memcmp
-// strnstr
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 
-// calloc
+void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
+
+// ft_substr
+// ft_strjoin
+// ft_strtrim
+// ft_split
+// ft_itoa
+// ft_strmapi
+// ft_striteri
+// ft_putchar_fd
+// ft_putstr_fd
+// ft_putendl_fd
+// ft_putnbr_fd
 
 #endif

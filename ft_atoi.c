@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:00:45 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/17 15:11:56 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/17 23:58:15 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 int	ft_atoi(const char *str)
 {
 	size_t	nb;
-	int	sign;
+	size_t	sign;
 
 	sign = 1;
-	while (9 <= *str && *str <= 13)
+	nb = 0;
+	while ((9 <= *str && *str <= 13) || *str == ' ')
 		str++;
 	if (*str == '-')
 		sign *= -1;
@@ -29,5 +30,5 @@ int	ft_atoi(const char *str)
 		nb = nb * 10 + (*str - '0');
 		str++;
 	}
-	return (sign * nb);
+	return ((int)(sign * nb));
 }
