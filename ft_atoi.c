@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:00:45 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/16 16:00:49 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:11:56 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_atoi(const char *str)
 {
-	int	nb;
+	size_t	nb;
 	int	sign;
 
 	sign = 1;
