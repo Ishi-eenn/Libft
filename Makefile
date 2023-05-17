@@ -1,23 +1,28 @@
-SRCS = ft_atoi.c
-OBJS = ${SRCS:.c=.o}
-NAME = libft.a
-INCS = libft.h
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-RM = rm -f
+NAME		= libft.a
+AR			= ar r
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
+RM			= rm -f
+SRCS		= ft_strlen.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c
+OBJS		= $(SRCS:%.c=%.o)
+B_SRCS		= $(SRCS)
+B_OBJS		= $(B_SRCS:%.c=%.o)
 
-all: ${NAME}
+all:	$(NAME)
 
-${NAME}: ${OBJS}
-	${CC} ${CFLAGS} -I ${INCS} ${SRCS} -o ${NAME}
+$(NAME):
+			$(CC) $(CFLAGS) -c $(SRCS)
+			$(AR) $(NAME) $(OBJS)
 
-.c.o:
-	${CC} ${CFLAGS} -I ${INCS} -c $< -o $@
+bonus:
+			$(CC) $(CFLAGS) -c $(B_SRCS)
+			$(AR) $(NAME) $(B_OBJS)
 
-clean: 
-	${RM} ${OBJS}
+clean:
+			$(RM) *.o
 
-fclean: clean
-	${RM} ${NAME}
+fclean:	clean
+			$(RM) $(NAME)
 
-re: fclean all
+re:	fclean all
+

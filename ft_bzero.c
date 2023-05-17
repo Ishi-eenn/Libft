@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:00:52 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/16 16:04:41 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/16 23:48:38 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	if (n == 0)
-		return ;
-	else
-		ft_memset(s, '\0', n);
+	ft_memset(s, '\0', n);
 }

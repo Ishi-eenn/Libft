@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:02:06 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/16 17:23:15 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/16 23:38:19 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 void	*ft_memset(void *b, int c, size_t len);
+size_t	ft_strlen(const char *s);
 
 #endif
