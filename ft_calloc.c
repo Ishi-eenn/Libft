@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 23:14:17 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/18 00:23:24 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/19 01:13:57 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,17 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
-
+	if (count == 0 || size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
+	if(count > SIZE_MAX / size)
+		return (NULL);
 	p = malloc(count * size);
 	if (p == NULL)
 		return (NULL);
 	ft_bzero(p, count * size);
 	return (p);
 }
+
