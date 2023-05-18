@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:01:28 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/18 00:23:48 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/19 00:34:36 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,23 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t		i;
-	char		*buff_dst;
-	const char	*buff_src;
+	size_t			i;
+	unsigned char	*buff_dst;
+	unsigned char	*buff_src;
 
-	i = 0;
-	buff_dst = (char *)dst;
-	buff_src = (const char *)src;
-	while (i < len)
+	i = 1;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	buff_dst = (unsigned char *)dst;
+	buff_src = (unsigned char *)src;
+	if (buff_dst < buff_src)
 	{
-		buff_dst[i] = buff_src[i];
+		ft_memcpy(dst, src, len);
+		return (dst);
+	}
+	while (i <= len)
+	{
+		buff_dst[len - i] = buff_src[len - i];
 		i++;
 	}
 	return (dst);

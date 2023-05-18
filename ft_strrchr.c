@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:01:52 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/17 12:14:39 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/19 00:33:12 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	max;
+	size_t			i;
+	unsigned char	*buff_s;
+	unsigned char	buff_c;
 
-	i = 0;
-	max = -1;
-	while (s[i] != '\0')
+	i = ft_strlen(s);
+	buff_s = (unsigned char *)s;
+	buff_c = (unsigned char)c;
+	while (i > 0)
 	{
-		if (s[i] == c)
-			max = i;
-		i++;
+		if (buff_s[i] == buff_c)
+			return ((char *)&buff_s[i]);
+		i--;
 	}
-	if (max == (size_t)-1)
-		return (NULL);
-	return ((char *)&s[max]);
+	if (buff_s[i] == buff_c)
+		return ((char *)&buff_s[i]);
+	return (NULL);
 }

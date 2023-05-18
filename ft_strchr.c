@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 17:21:12 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/17 12:10:01 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/19 00:33:33 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*buff_s;
+	unsigned char	buff_c;
 
 	i = 0;
-	while (s[i] != '\0' && s[i] != c)
+	buff_s = (unsigned char *)s;
+	buff_c = (unsigned char)c;
+	while (buff_s[i] != '\0')
+	{
+		if (buff_s[i] == buff_c)
+			return ((char *)&buff_s[i]);
 		i++;
-	if (s[i] != c)
-		return ((char *)&s[i]);
+	}
+	if (buff_s[i] == buff_c)
+		return ((char *)&buff_s[i]);
 	return (NULL);
 }
