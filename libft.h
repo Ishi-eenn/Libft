@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:02:06 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/19 01:11:38 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/19 12:50:52 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
-// ft_substr
-// ft_strjoin
-// ft_strtrim
-// ft_split
-// ft_itoa
-// ft_strmapi
-// ft_striteri
+// char *ft_substr(char const *s, unsigned int start, size_t len);
+// char *ft_strjoin(char const *s1, char const *s2);
+// char *ft_strtrim(char const *s1, char const *set);
+// char **ft_split(char const *s, char c);
+// char *ft_itoa(int n);
+// char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+// void ft_striteri(char *s, void (*f)(unsigned int, char*));
 // ft_putchar_fd
 // ft_putstr_fd
 // ft_putendl_fd
