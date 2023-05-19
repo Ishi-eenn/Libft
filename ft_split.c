@@ -6,118 +6,114 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:10:59 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/19 12:44:33 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/20 01:02:07 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	is_charset(char c, char *charset)
+static size_t	ft_isexist(const char *str, char c)
 {
-	while (*charset)
+	size_t	cur;
+	size_t	len;
+
+	cur = 0;
+	len = 0;
+	while (str[cur] == c && str[cur] != '\0')
+		cur++;
+	while (str[cur + len] != c && str[cur + len] != '\0')
+		len++;
+	if (len == 0)
+		return (len);
+	return (cur + len);
+}
+
+static char	**ft_split_free(char **a)
+{
+	size_t	len;
+
+	if (a)
 	{
-		if (c == *charset)
-			return (1);
-		charset++;
+		len = 0;
+		while (a[len] != NULL)
+			free(a[len++]);
+		free(a);
 	}
-	return (0);
+	return (NULL);
 }
 
-void	get_words(char *str, char *charset, int *word_count)
+static char	**ft_split_realloc(char **arr, size_t len, size_t siz)
 {
-	int		in_word;
-	char	*tmp;
+	char	**p;
+	size_t	i;
 
-	in_word = 0;
-	while (*str)
+	p = (char **)ft_calloc(len, siz);
+	if (p == NULL)
 	{
-		tmp = charset;
-		while (*tmp != '\0')
-		{
-			if (*str == *tmp)
-			{
-				if (in_word && (*word_count)++ != 0)
-					in_word = 0;
-				break ;
-			}
-			tmp++;
-		}
-		if (*tmp == '\0')
-			in_word = 1;
-		str++;
+		ft_split_free(arr);
+		return (NULL);
 	}
-	if (in_word)
-		(*word_count)++;
-}
-
-int	ft_strlen_sep(char *str, char *charset)
-{
-	int	word_len;
-
-	word_len = 0;
-	while (str[word_len] && !is_charset(str[word_len], charset))
-		word_len++;
-	return (word_len);
-}
-
-char	*assign_words(char *str, char *charset)
-{
-	int		i;
-	char	*word;
-
 	i = 0;
-	word = malloc(sizeof(char) * (ft_strlen_sep(str, charset) + 1));
-	while (i < ft_strlen_sep(str, charset))
+	while (arr[i] != NULL)
 	{
-		word[i] = str[i];
+		p[i] = arr[i];
 		i++;
 	}
-	word[i] = '\0';
-	return (word);
+	free(arr);
+	return (p);
 }
 
-char	**ft_split(char *str, char *charset)
+static char	**ft_add_back(char **arr, size_t len, const char *str, char c)
 {
-	int		word_count;
-	char	**array;
-	int		i;
+	size_t	start;
+	size_t	end;
+	char	*p;
+	size_t	i;
 
-	i = 0;
-	word_count = 0;
-	array = NULL;
-	get_words(str, charset, &word_count);
-	array = malloc(sizeof(char *) * (word_count + 1));
-	while (*str)
+	start = 0;
+	while (str[start] == c && str[start] != '\0')
+		start++;
+	end = start;
+	while (str[end] != c && str[end] != '\0')
+		end++;
+	p = (char *)ft_calloc(end - start + 1, sizeof(char));
+	if (p == NULL)
 	{
-		while (*str && is_charset(*str, charset))
-			str++;
-		if (*str)
-		{
-			array[i] = assign_words(str, charset);
-			i++;
-		}
-		while (*str && !is_charset(*str, charset))
-			str++;
+		ft_split_free(arr);
+		return (NULL);
 	}
-	array[i] = 0;
-	return (array);
+	i = 0;
+	while (start < end)
+		p[i++] = str[start++];
+	arr[len - 2] = p;
+	return (arr);
 }
 
-// #include <stdio.h>
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+	void	*p;
+	size_t	len;
+	size_t	cur;
 
-// int    main(void)
-// {
-//     char    *str;
-//     char    *charset;
-//     char    **ans;
-
-//     str = "_hello__+__world__+__japan__+__42__+__42Tokyo";
-//     charset = "+_";
-//     ans = ft_split(str, charset);
-//     printf("0: %s\n", ans[0]);
-//     printf("1: %s\n", ans[1]);
-//     printf("2: %s\n", ans[2]);
-//     printf("3: %s\n", ans[3]);
-//     printf("4: %s\n", ans[4]);
-// 	printf("5: %s\n", ans[5]);
-// }
+	if (s == NULL)
+		return (NULL);
+	len = 0;
+	res = (char **)ft_calloc(++len, sizeof(char *));
+	if (res)
+	{
+		cur = 0;
+		while (s[cur] != '\0' && ft_isexist(&(s[cur]), c))
+		{
+			p = ft_split_realloc(res, ++len, sizeof(char *));
+			if (p == NULL)
+				return (NULL);
+			res = p;
+			res = ft_add_back(res, len, &(s[cur]), c);
+			if (res == NULL)
+				return (NULL);
+			cur += ft_isexist(&(s[cur]), c);
+		}
+	}
+	return (res);
+}
