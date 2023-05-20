@@ -6,9 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:01:57 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/16 16:02:04 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:42:42 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
+/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:10:44 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/20 01:44:09 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:46:30 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	intlen(int n)
+size_t	ft_intlen(int n)
 {
 	size_t	len;
 	long	buff_n;
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 	long	buff_n;
 	char	*p;
 
-	len = intlen(n);
+	len = ft_intlen(n);
 	p = malloc(sizeof(char) * (len + 1));
 	buff_n = n;
 	if (p == NULL)
@@ -56,12 +56,3 @@ char	*ft_itoa(int n)
 		p[len] = '-';
 	return (p);
 }
-
-// #include <stdio.h>
-
-// int main(void){
-// 	int n;
-// 	scanf("%d", &n);
-// 	printf("%s\n", ft_itoa(n));
-// 	return (0);
-// }

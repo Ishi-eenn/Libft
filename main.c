@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
+/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:02:13 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/18 16:47:25 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:52:01 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <unistd.h>
 #include <string.h>
 
 int main(void){
