@@ -6,114 +6,104 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:10:59 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/20 01:02:07 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/21 21:40:37 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_isexist(const char *str, char c)
-{
-	size_t	cur;
-	size_t	len;
-
-	cur = 0;
-	len = 0;
-	while (str[cur] == c && str[cur] != '\0')
-		cur++;
-	while (str[cur + len] != c && str[cur + len] != '\0')
-		len++;
-	if (len == 0)
-		return (len);
-	return (cur + len);
-}
-
-static char	**ft_split_free(char **a)
-{
-	size_t	len;
-
-	if (a)
-	{
-		len = 0;
-		while (a[len] != NULL)
-			free(a[len++]);
-		free(a);
-	}
-	return (NULL);
-}
-
-static char	**ft_split_realloc(char **arr, size_t len, size_t siz)
-{
-	char	**p;
-	size_t	i;
-
-	p = (char **)ft_calloc(len, siz);
-	if (p == NULL)
-	{
-		ft_split_free(arr);
-		return (NULL);
-	}
-	i = 0;
-	while (arr[i] != NULL)
-	{
-		p[i] = arr[i];
-		i++;
-	}
-	free(arr);
-	return (p);
-}
-
-static char	**ft_add_back(char **arr, size_t len, const char *str, char c)
-{
-	size_t	start;
-	size_t	end;
-	char	*p;
-	size_t	i;
-
-	start = 0;
-	while (str[start] == c && str[start] != '\0')
-		start++;
-	end = start;
-	while (str[end] != c && str[end] != '\0')
-		end++;
-	p = (char *)ft_calloc(end - start + 1, sizeof(char));
-	if (p == NULL)
-	{
-		ft_split_free(arr);
-		return (NULL);
-	}
-	i = 0;
-	while (start < end)
-		p[i++] = str[start++];
-	arr[len - 2] = p;
-	return (arr);
-}
+static size_t	count_elements(char *ch_str, char c);
+static char		**assign_p(char *ch_str, char c, char **pp);
+static void		memory_free(char **pp, size_t index);
+static char		*allocate_memory(char **pp, size_t index, size_t p_len);
 
 char	**ft_split(char const *s, char c)
 {
-	char	**res;
-	void	*p;
-	size_t	len;
-	size_t	cur;
+	char	**pp;
+	size_t	pp_len;
+	char	*ch_str;
 
-	if (s == NULL)
+	ch_str = (char *)s;
+	pp_len = count_elements(ch_str, c);
+	pp = (char **)malloc((pp_len + 1) * sizeof(char *));
+	if (pp == NULL)
 		return (NULL);
-	len = 0;
-	res = (char **)ft_calloc(++len, sizeof(char *));
-	if (res)
+	pp[pp_len] = (char *) NULL;
+	if (ch_str == NULL)
+		return (pp);
+	pp = assign_p(ch_str, c, pp);
+	return (pp);
+}
+
+static size_t	count_elements(char *ch_str, char c)
+{
+	size_t	pp_len;
+
+	pp_len = 0;
+	if (ch_str == NULL)
+		return (0);
+	while (*ch_str != '\0')
 	{
-		cur = 0;
-		while (s[cur] != '\0' && ft_isexist(&(s[cur]), c))
+		if (*ch_str != c)
+			pp_len++;
+		while (*ch_str != c && *ch_str != '\0')
+			ch_str++;
+		while (*ch_str == c && *ch_str != '\0')
+			ch_str++;
+	}
+	return (pp_len);
+}
+
+static char	**assign_p(char *ch_str, char c, char **pp)
+{
+	size_t	i;
+	size_t	p_len;
+	char	*p;
+
+	i = 0;
+	while (*ch_str != '\0')
+	{
+		if (*ch_str != c)
 		{
-			p = ft_split_realloc(res, ++len, sizeof(char *));
+			p_len = 0;
+			while (ch_str[p_len] != c && ch_str[p_len] != '\0')
+				p_len++;
+			p = allocate_memory(pp, i, p_len);
 			if (p == NULL)
 				return (NULL);
-			res = p;
-			res = ft_add_back(res, len, &(s[cur]), c);
-			if (res == NULL)
-				return (NULL);
-			cur += ft_isexist(&(s[cur]), c);
+			ft_strlcpy(p, ch_str, p_len + 1);
+			pp[i] = p;
+			i++;
 		}
+		while (*ch_str != c && *ch_str != '\0')
+			ch_str++;
+		while (*ch_str == c && *ch_str != '\0')
+			ch_str++;
 	}
-	return (res);
+	return (pp);
+}
+
+static char	*allocate_memory(char **pp, size_t index, size_t p_len)
+{
+	char	*p;
+
+	p = (char *)malloc((p_len + 1) * sizeof(char));
+	if (p == NULL)
+	{
+		memory_free(pp, index);
+		return (NULL);
+	}
+	return (p);
+}
+
+static void	memory_free(char **pp, size_t index)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < index)
+	{
+		free(pp[i]);
+	}
+	free(pp);
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 16:01:31 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/21 16:25:26 by tsishika         ###   ########.fr       */
+/*   Created: 2023/05/21 22:04:14 by tsishika          #+#    #+#             */
+/*   Updated: 2023/05/21 23:12:42 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	unsigned char	*buff;
-	size_t	i;
-
-	buff = (unsigned char *)b;
-	i = 0;
-	while (i < len)
-	{
-		buff[i] = c;
-		i++;
-	}
-	return (b);
+	if (lst == NULL || new == NULL)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	t_list *list = ft_lstnew("1");
+// 	ft_lstadd_front(&list, ft_lstnew("2"));
+// 	printf("%s\n", (char *)lst->content);
+// 	printf("%s\n", (char *)lst->next->content);
+// }
