@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:01:22 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/21 18:11:09 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/22 11:36:36 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n && (buff_s1[i] == buff_s2[i]))
 		i++;
-	if(i == n)
+	if (i == n)
 		return (0);
 	return ((int)(buff_s1[i] - buff_s2[i]));
 }

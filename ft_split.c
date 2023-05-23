@@ -6,34 +6,11 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:10:59 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/21 21:40:37 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/22 11:16:37 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	count_elements(char *ch_str, char c);
-static char		**assign_p(char *ch_str, char c, char **pp);
-static void		memory_free(char **pp, size_t index);
-static char		*allocate_memory(char **pp, size_t index, size_t p_len);
-
-char	**ft_split(char const *s, char c)
-{
-	char	**pp;
-	size_t	pp_len;
-	char	*ch_str;
-
-	ch_str = (char *)s;
-	pp_len = count_elements(ch_str, c);
-	pp = (char **)malloc((pp_len + 1) * sizeof(char *));
-	if (pp == NULL)
-		return (NULL);
-	pp[pp_len] = (char *) NULL;
-	if (ch_str == NULL)
-		return (pp);
-	pp = assign_p(ch_str, c, pp);
-	return (pp);
-}
 
 static size_t	count_elements(char *ch_str, char c)
 {
@@ -52,6 +29,31 @@ static size_t	count_elements(char *ch_str, char c)
 			ch_str++;
 	}
 	return (pp_len);
+}
+
+static void	memory_free(char **pp, size_t index)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < index)
+	{
+		free(pp[i]);
+	}
+	free(pp);
+}
+
+static char	*allocate_memory(char **pp, size_t index, size_t p_len)
+{
+	char	*p;
+
+	p = (char *)malloc((p_len + 1) * sizeof(char));
+	if (p == NULL)
+	{
+		memory_free(pp, index);
+		return (NULL);
+	}
+	return (p);
 }
 
 static char	**assign_p(char *ch_str, char c, char **pp)
@@ -83,27 +85,20 @@ static char	**assign_p(char *ch_str, char c, char **pp)
 	return (pp);
 }
 
-static char	*allocate_memory(char **pp, size_t index, size_t p_len)
+char	**ft_split(char const *s, char c)
 {
-	char	*p;
+	char	**pp;
+	size_t	pp_len;
+	char	*ch_str;
 
-	p = (char *)malloc((p_len + 1) * sizeof(char));
-	if (p == NULL)
-	{
-		memory_free(pp, index);
+	ch_str = (char *)s;
+	pp_len = count_elements(ch_str, c);
+	pp = (char **)malloc((pp_len + 1) * sizeof(char *));
+	if (pp == NULL)
 		return (NULL);
-	}
-	return (p);
-}
-
-static void	memory_free(char **pp, size_t index)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < index)
-	{
-		free(pp[i]);
-	}
-	free(pp);
+	pp[pp_len] = (char *) NULL;
+	if (ch_str == NULL)
+		return (pp);
+	pp = assign_p(ch_str, c, pp);
+	return (pp);
 }

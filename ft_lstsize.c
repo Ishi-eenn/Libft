@@ -6,13 +6,13 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 22:44:11 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/21 23:12:55 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/22 11:37:02 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	size_t	i;
 
@@ -23,5 +23,4 @@ int ft_lstsize(t_list *lst)
 		i++;
 	}
 	return ((int)i);
-
 }

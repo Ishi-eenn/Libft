@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:02:13 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/21 18:37:17 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/22 11:17:44 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,3 +186,11 @@
 // 	// strnstr(NULL, needle, 1);
 // }
 
+// int main(void){
+// 	char str[] = "    12334     1231  asd as2 ";
+// 	char **pp = ft_split(str, ' ');
+// 	printf("%s\n", pp[0]);
+// 	printf("%s\n", pp[1]);
+// 	printf("%s\n", pp[2]);
+// 	printf("%s\n", pp[3]);
+// }
