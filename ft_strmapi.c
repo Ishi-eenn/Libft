@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:11:10 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/20 01:49:19 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/24 06:14:07 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (s == NULL || f == NULL)
 		return (NULL);
 	len = ft_strlen(s);
-	p = (char *)malloc((len + 1) * sizeof(char));
+	p = ft_calloc(len + 1, sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	p[len] = '\0';

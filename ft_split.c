@@ -6,32 +6,32 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:10:59 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/22 11:16:37 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/24 06:09:36 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_elements(char *ch_str, char c)
+static size_t	ft_count_elements(char *str, char c)
 {
 	size_t	pp_len;
 
 	pp_len = 0;
-	if (ch_str == NULL)
+	if (str == NULL)
 		return (0);
-	while (*ch_str != '\0')
+	while (*str != '\0')
 	{
-		if (*ch_str != c)
+		if (*str != c)
 			pp_len++;
-		while (*ch_str != c && *ch_str != '\0')
-			ch_str++;
-		while (*ch_str == c && *ch_str != '\0')
-			ch_str++;
+		while (*str != c && *str != '\0')
+			str++;
+		while (*str == c && *str != '\0')
+			str++;
 	}
 	return (pp_len);
 }
 
-static void	memory_free(char **pp, size_t index)
+static void	ft_memory_free(char **pp, size_t index)
 {
 	size_t	i;
 
@@ -43,44 +43,44 @@ static void	memory_free(char **pp, size_t index)
 	free(pp);
 }
 
-static char	*allocate_memory(char **pp, size_t index, size_t p_len)
+static char	*ft_allocate_memory(char **pp, size_t index, size_t p_len)
 {
 	char	*p;
 
-	p = (char *)malloc((p_len + 1) * sizeof(char));
+	p = ft_calloc(p_len + 1,  sizeof(char));
 	if (p == NULL)
 	{
-		memory_free(pp, index);
+		ft_memory_free(pp, index);
 		return (NULL);
 	}
 	return (p);
 }
 
-static char	**assign_p(char *ch_str, char c, char **pp)
+static char	**ft_allocate_p(char *str, char c, char **pp)
 {
 	size_t	i;
 	size_t	p_len;
 	char	*p;
 
 	i = 0;
-	while (*ch_str != '\0')
+	while (*str != '\0')
 	{
-		if (*ch_str != c)
+		if (*str != c)
 		{
 			p_len = 0;
-			while (ch_str[p_len] != c && ch_str[p_len] != '\0')
+			while (str[p_len] != c && str[p_len] != '\0')
 				p_len++;
-			p = allocate_memory(pp, i, p_len);
+			p = ft_allocate_memory(pp, i, p_len);
 			if (p == NULL)
 				return (NULL);
-			ft_strlcpy(p, ch_str, p_len + 1);
+			ft_strlcpy(p, str, p_len + 1);
 			pp[i] = p;
 			i++;
 		}
-		while (*ch_str != c && *ch_str != '\0')
-			ch_str++;
-		while (*ch_str == c && *ch_str != '\0')
-			ch_str++;
+		while (*str != c && *str != '\0')
+			str++;
+		while (*str == c && *str != '\0')
+			str++;
 	}
 	return (pp);
 }
@@ -89,16 +89,16 @@ char	**ft_split(char const *s, char c)
 {
 	char	**pp;
 	size_t	pp_len;
-	char	*ch_str;
+	char	*str;
 
-	ch_str = (char *)s;
-	pp_len = count_elements(ch_str, c);
-	pp = (char **)malloc((pp_len + 1) * sizeof(char *));
+	str = (char *)s;
+	pp_len = ft_count_elements(str, c);
+	pp = ft_calloc(pp_len + 1, sizeof(char *));
 	if (pp == NULL)
 		return (NULL);
 	pp[pp_len] = (char *) NULL;
-	if (ch_str == NULL)
+	if (str == NULL)
 		return (pp);
-	pp = assign_p(ch_str, c, pp);
+	pp = ft_allocate_p(str, c, pp);
 	return (pp);
 }

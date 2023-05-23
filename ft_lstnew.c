@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 21:48:03 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/21 23:12:54 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/24 06:13:05 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
 
-	node = malloc(sizeof(t_list));
+	node = ft_calloc(1, sizeof(t_list));
 	if (node == NULL)
 		return (NULL);
 	node->content = content;

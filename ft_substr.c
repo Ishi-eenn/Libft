@@ -6,7 +6,7 @@
 /*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:11:18 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/20 00:36:55 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/24 06:16:34 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (s == NULL)
 		return (NULL);
 	if (ft_strlen(s) < len)
-		str = malloc(sizeof(char) * (ft_strlen(s) + 1));
+		str = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	else
-		str = malloc(sizeof(char) * (len + 1));
+		str = ft_calloc(len + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	i = 0;
