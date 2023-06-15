@@ -10,24 +10,28 @@ SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strle
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c  \
 		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJS	= $(SRCS:%.c=%.o)
-B_SRCS	= $(SRCS) ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+B_SRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-B_OBJS	= $(B_SRCS:%.c=%.o)
 
-all:	$(NAME)
+ifdef WITH_BONUS
+		OBJS += $(B_SRCS:.c=.o)
+endif
 
-$(NAME):
-		$(CC) $(CFLAGS) -c $(SRCS)
-		$(AR) $(NAME) $(OBJS)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+		ar rc $(NAME) $(OBJS)
 
 bonus:
-		$(CC) $(CFLAGS) -c $(B_SRCS)
-		$(AR) $(NAME) $(B_OBJS)
+		make WITH_BONUS=1
+
+.c.o: $(OBJS)
+		$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
-		$(RM) *.o
+		$(RM) $(OBJS) $(B_SRCS:.c=.o)
 
-fclean:	clean
+fclean: clean
 		$(RM) $(NAME)
 
-re:	fclean all
+re: fclean all

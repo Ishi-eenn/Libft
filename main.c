@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
+/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:02:13 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/22 11:17:44 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/29 10:48:38 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,3 +194,11 @@
 // 	printf("%s\n", pp[2]);
 // 	printf("%s\n", pp[3]);
 // }
+
+#include <stdio.h>
+
+int main(void){
+	// printf("%ld\n", ft_strtol("18446744073709551614"));
+	printf("%d\n", ft_atoi("18446744073709551614"));
+	return (0);
+}

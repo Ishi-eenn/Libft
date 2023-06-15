@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
+/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:00:45 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/22 11:35:08 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/05/29 10:47:39 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,11 @@ int	ft_atoi(const char *str)
 {
 	return ((int)ft_strtol(str));
 }
+
+// #include <stdio.h>
+
+// int main(void){
+// 	printf("%ld\n", ft_strtol("18446744073709551614"));
+// 	printf("%d\n", ft_atoi("18446744073709551614"));
+// 	return (0);
+// }
