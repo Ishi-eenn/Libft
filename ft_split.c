@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
+/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:10:59 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/24 06:09:36 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/08/19 23:38:49 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static void	ft_memory_free(char **pp, size_t index)
 	while (i < index)
 	{
 		free(pp[i]);
+		i++;
 	}
 	free(pp);
 }
