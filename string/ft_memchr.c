@@ -6,11 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:01:19 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/20 18:49:10 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:10:00 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

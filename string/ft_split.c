@@ -6,11 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:10:59 by tsishika          #+#    #+#             */
-/*   Updated: 2023/08/19 23:38:49 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:17:44 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 static size_t	ft_count_elements(char *str, char c)
 {
@@ -48,7 +48,7 @@ static char	*ft_allocate_memory(char **pp, size_t index, size_t p_len)
 {
 	char	*p;
 
-	p = ft_calloc(p_len + 1,  sizeof(char));
+	p = ft_calloc(p_len + 1, sizeof(char));
 	if (p == NULL)
 	{
 		ft_memory_free(pp, index);

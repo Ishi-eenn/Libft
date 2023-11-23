@@ -6,11 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:01:31 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/05 12:46:48 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:10:28 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

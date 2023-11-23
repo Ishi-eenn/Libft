@@ -28,10 +28,10 @@ LIST_SRC	=	ft_lstadd_back.c \
 LIST		=	$(addprefix $(LIST_DIR)/, $(LIST_SRC))
 
 STDIO_DIR	=	stdio
-STDIO_SRC	=	ft_putchar.c \
-				ft_putendl.c \
-				ft_putnbr.c \
-				ft_putstr.c
+STDIO_SRC	=	ft_putchar_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
+				ft_putstr_fd.c
 STDIO		=	$(addprefix $(STDIO_DIR)/, $(STDIO_SRC))
 
 STDLIB_DIR	=	stdlib
@@ -67,20 +67,20 @@ SRCS		=	$(CTYPE) \
 				$(STRING) \
 				$(STRINGS)
 
-OBJ_DIR	= objs
-OBJS	= $(subst $(SRC_DIR), $(OBJ_DIR), $(SRCS:.c=.o))
+OBJS_DIR	=	objs
+OBJS_SRC	=	$(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS_SRC)
+	$(AR) $(NAME) $(OBJS_SRC)
 
-$(OBJ_DIR)/%.o: %.c
+$(OBJS_DIR)/%.o: %.c
 	@ mkdir -p $(@D)
 	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) -r $(OBJS_DIR)
 
 fclean: clean
 	$(RM) $(NAME)

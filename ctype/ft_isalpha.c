@@ -6,11 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:00:59 by tsishika          #+#    #+#             */
-/*   Updated: 2023/11/23 18:29:47 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 20:38:32 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ctype.h"
+#include "ft_ctype.h"
 
 int	ft_isalpha(int c)
 {

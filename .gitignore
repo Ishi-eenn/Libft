@@ -1,6 +1,6 @@
-libft-tester-tokyo
-libftTester
-Libftest
 .vscode
+.DS_Store
+objs
+libft.a
 main.c
 a.out

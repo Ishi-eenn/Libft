@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
+/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:01:25 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/21 17:18:20 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:10:21 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "ft_string.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

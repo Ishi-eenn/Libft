@@ -6,11 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:11:18 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/27 14:00:34 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:11:10 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

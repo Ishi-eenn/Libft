@@ -6,11 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:01:55 by tsishika          #+#    #+#             */
-/*   Updated: 2023/11/23 18:29:59 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 20:37:25 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ctype.h"
+#include "ft_ctype.h"
 
 int	ft_tolower(int c)
 {
