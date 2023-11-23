@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
+/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 16:01:07 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/17 23:05:40 by tsishika         ###   ########.fr       */
+/*   Created: 2023/05/16 16:01:04 by tsishika          #+#    #+#             */
+/*   Updated: 2023/11/23 18:29:50 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ctype.h"
 
-int	ft_isdigit(int c)
+int	ft_isascii(int c)
 {
-	return ('0' <= c && c <= '9');
+	return (0 <= c && c < 128);
 }

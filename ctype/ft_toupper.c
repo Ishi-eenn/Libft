@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsishika <syi378039@gmail.com>             +#+  +:+       +#+        */
+/*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 16:00:56 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/17 23:02:50 by tsishika         ###   ########.fr       */
+/*   Created: 2023/05/16 16:01:57 by tsishika          #+#    #+#             */
+/*   Updated: 2023/11/23 18:30:01 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ctype.h"
 
-int	ft_isalnum(int c)
+int	ft_toupper(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	if ('a' <= c && c <= 'z')
+		c -= 'a' - 'A';
+	return (c);
 }

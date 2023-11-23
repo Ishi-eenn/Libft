@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_ctype.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 00:10:56 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/20 18:57:56 by tsishika         ###   ########.fr       */
+/*   Created: 2023/11/23 18:06:26 by tsishika          #+#    #+#             */
+/*   Updated: 2023/11/23 18:12:12 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_CTYPE_H
+#define FT_CTYPE_H
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	size_t	i;
+//ft_isalnum.c
+int		ft_isalnum(int c);
 
-	if (s == NULL)
-		return ;
-	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
-}
+//ft_isalpha.c
+int		ft_isalpha(int c);
+
+//ft_isascii.c
+int		ft_isascii(int c);
+
+//ft_isdigit.c
+int		ft_isdigit(int c);
+
+//ft_isprint.c
+int		ft_isprint(int c);
+
+//ft_tolower.c
+int		ft_tolower(int c);
+
+//ft_toupper.c
+int		ft_toupper(int c);
+
+#endif

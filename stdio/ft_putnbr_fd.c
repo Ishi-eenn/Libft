@@ -6,11 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:10:52 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/29 16:51:23 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:34:05 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_stdio.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

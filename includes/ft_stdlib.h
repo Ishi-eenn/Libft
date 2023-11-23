@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_stdlib.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 16:01:55 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/20 18:42:28 by tsishika         ###   ########.fr       */
+/*   Created: 2023/11/23 18:34:54 by tsishika          #+#    #+#             */
+/*   Updated: 2023/11/23 18:36:49 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_STDLIB_H
+# define FT_STDLIB_H
 
-int	ft_tolower(int c)
-{
-	if ('A' <= c && c <= 'Z')
-		c += 'a' - 'A';
-	return (c);
-}
+#include <stddef.h>
+#include <limits.h>
+
+// ft_atoi.c
+int		ft_atoi(const char *str);
+
+// ft_calloc.c
+void	*ft_calloc(size_t count, size_t size);
+
+// ft_itoa.c
+char	*ft_itoa(int n);
+
+#endif

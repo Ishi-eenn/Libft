@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 00:10:37 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/19 17:43:15 by tsishika         ###   ########.fr       */
+/*   Created: 2023/05/16 16:01:11 by tsishika          #+#    #+#             */
+/*   Updated: 2023/11/23 18:29:56 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ctype.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_isprint(int c)
 {
-	write(fd, &c, 1);
+	return (32 <= c && c < 127);
 }

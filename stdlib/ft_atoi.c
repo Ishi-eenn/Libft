@@ -6,11 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:00:45 by tsishika          #+#    #+#             */
-/*   Updated: 2023/05/29 10:47:39 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:37:06 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_stdlib.h"
 
 static int	ft_isspace(int c)
 {
