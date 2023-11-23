@@ -37,7 +37,8 @@ STDIO		=	$(addprefix $(STDIO_DIR)/, $(STDIO_SRC))
 STDLIB_DIR	=	stdlib
 STDLIB_SRC	=	ft_atoi.c \
 				ft_calloc.c \
-				ft_itoa.c
+				ft_itoa.c \
+				ft_strtol.c
 STDLIB		=	$(addprefix $(STDLIB_DIR)/, $(STDLIB_SRC))
 
 STRING_DIR	=	string

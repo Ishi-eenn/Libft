@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:34:54 by tsishika          #+#    #+#             */
-/*   Updated: 2023/11/23 21:15:41 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:26:21 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ void	*ft_calloc(size_t count, size_t size);
 
 // ft_itoa.c
 char	*ft_itoa(int n);
+
+// ft_strtol.c
+long	ft_strtol(const char *str);
 
 #endif
