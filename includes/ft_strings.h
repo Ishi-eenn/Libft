@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 21:01:17 by tsishika          #+#    #+#             */
-/*   Updated: 2023/11/23 21:16:59 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:22:07 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 # include "ft_string.h"
 
+//ft_bzero.c
 void	ft_bzero(void *s, size_t n);
 
 #endif
