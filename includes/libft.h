@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 21:14:16 by tsishika          #+#    #+#             */
-/*   Updated: 2023/11/23 21:22:19 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/27 10:58:53 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 # include "ft_stdlib.h"
 # include "ft_string.h"
 # include "ft_strings.h"
-# include "ft_type.h"
+# include "type.h"
 
 #endif

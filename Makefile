@@ -1,7 +1,7 @@
 NAME		=	libft.a
 AR			=	ar rc
 CC			=	cc
-INCLUDE		=	-I./includes
+INCLUDE		=	-I includes
 FLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf
 
@@ -81,7 +81,7 @@ $(OBJS_DIR)/%.o: %.c
 	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
-	$(RM) -r $(OBJS_DIR)
+	$(RM) $(OBJS_DIR)
 
 fclean: clean
 	$(RM) $(NAME)

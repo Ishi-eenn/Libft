@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type.h                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 20:48:03 by tsishika          #+#    #+#             */
-/*   Updated: 2023/11/27 10:58:55 by tsishika         ###   ########.fr       */
+/*   Created: 2023/11/27 13:40:19 by tsishika          #+#    #+#             */
+/*   Updated: 2023/11/27 13:41:29 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPE_H
-# define TYPE_H
+#include "string.h"
 
-typedef struct s_list
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
-#endif
+	while (*s1 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
+}

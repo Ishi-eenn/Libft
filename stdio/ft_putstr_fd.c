@@ -6,11 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:10:56 by tsishika          #+#    #+#             */
-/*   Updated: 2023/11/23 18:34:07 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:39:42 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stdio.h"
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

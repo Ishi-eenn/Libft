@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:18:09 by tsishika          #+#    #+#             */
-/*   Updated: 2023/11/23 21:23:46 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:42:04 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ char	**ft_split(char const *s, char c);
 
 // ft_strchr.c
 char	*ft_strchr(const char *s, int c);
+
+// ft_strcmp.c
+int	ft_strcmp(const char *s1, const char *s2)
 
 // ft_strdup.c
 char	*ft_strdup(const char *s1);
