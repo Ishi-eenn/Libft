@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:12:27 by tsishika          #+#    #+#             */
-/*   Updated: 2023/11/28 09:13:45 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/11/28 09:17:01 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdlib.h>
 # include <limits.h>
 
-#include "ft_string.h"
+# include "ft_string.h"
 
 // get_next_line.c
 char	*get_next_line(int fd);
