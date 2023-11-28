@@ -27,8 +27,13 @@ LIST_SRC	=	ft_lstadd_back.c \
 				ft_lstsize.c
 LIST		=	$(addprefix $(LIST_DIR)/, $(LIST_SRC))
 
+GNL_DIR		=	get_next_line
+GNL_SRC		=	get_next_line.c
+GNL			=	$(addprefix $(GNL_DIR)/, $(GNL_SRC))
+
 STDIO_DIR	=	stdio
-STDIO_SRC	=	ft_putchar_fd.c \
+STDIO_SRC	=	$(GNL) \
+				ft_putchar_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
 				ft_putstr_fd.c
